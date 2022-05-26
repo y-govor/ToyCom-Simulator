@@ -1,0 +1,76 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Colors -->
+    <Color x:Key="PrimaryBackgroundColor">#FFF2F2F2</Color>
+    <Color x:Key="PrimaryForegroundColor">#FF0F0F0F</Color>
+    <Color x:Key="WindowBorderColor">#FFC2C2C2</Color>
+    <Color x:Key="CaptionButtonBackgroundColor">#FFDADADA</Color>
+    <Color x:Key="CloseButtonBackgroundColor">#FFE81223</Color>
+    <Color x:Key="CloseButtonForegroundColor">#FFF2F2F2</Color>
+    <Color x:Key="MenuBackgroundColor">#FFF2F2F2</Color>
+    <Color x:Key="MenuForegroundColor">#FF0F0F0F</Color>
+    <Color x:Key="MenuBorderColor">#FFDADADA</Color>
+    <Color x:Key="MenuSelectionColor">#FFDADADA</Color>
+    <Color x:Key="MenuSeparatorColor">#FF929292</Color>
+    <Color x:Key="MenuDisabledTextColor">#FF929292</Color>
+    <Color x:Key="ButtonBackgroundColor">#FFE0E0E0</Color>
+    <Color x:Key="ButtonMouseOverBackgroundColor">#FFCACACA</Color>
+    <Color x:Key="ButtonMouseDownBackgroundColor">#FFC2C2C2</Color>
+    <Color x:Key="ButtonDisabledBackgroundColor">#FFC2C2C2</Color>
+    <Color x:Key="ButtonForegroundColor">#FF1E1E1E</Color>
+    <Color x:Key="ButtonDisabledForegroundColor">#FF747474</Color>
+    <Color x:Key="TextBoxForegroundColor">#FF0F0F0F</Color>
+    <Color x:Key="TextBoxBackgroundColor">#FFEFEFEF</Color>
+    <Color x:Key="TextBoxBorderColor">#FF8C8C8C</Color>
+    <Color x:Key="TextBoxFocusedBorderColor">#FF0F62FE</Color>
+    <Color x:Key="TextEditorForegroundColor">#FF28282D</Color>
+    <Color x:Key="TextEditorBackgroundColor">#FFFAFAFA</Color>
+    <Color x:Key="TextEditorCommentColor">#FF6A737D</Color>
+    <Color x:Key="ComboBoxForegroundColor">#FF0F0F0F</Color>
+    <Color x:Key="ComboBoxBackgroundColor">#FFEFEFEF</Color>
+    <Color x:Key="ComboBoxSelectionColor">#FFCACACA</Color>
+    <Color x:Key="ComboBoxBorderColor">#FF8C8C8C</Color>
+    <Color x:Key="CheckBoxBackgroundColor">#FFEFEFEF</Color>
+    <Color x:Key="CheckBoxBorderColor">#FF0F0F0F</Color>
+    <Color x:Key="CheckBoxMouseOverBorderColor">#FF0F62FE</Color>
+    <Color x:Key="ScrollBarBackgroundColor">#FFF0F0F0</Color>
+    <Color x:Key="ScrollBarThumbColor">#FFCDCDCD</Color>
+    <Color x:Key="ScrollBarThumbMouseOverColor">#FFA7A7A7</Color>
+    <Color x:Key="ScrollBarThumbMouseDownColor">#FF606060</Color>
+    <!--
+    //Dark
+    BG - #FF28282D
+    Text - #FFAAAAAF
+    Comment - #FF969EA5
+    -->
+    <!-- Brushes -->
+    <SolidColorBrush x:Key="PrimaryBackgroundBrush" Color="{DynamicResource PrimaryBackgroundColor}"/>
+    <SolidColorBrush x:Key="PrimaryForegroundBrush" Color="{DynamicResource PrimaryForegroundColor}"/>
+    <SolidColorBrush x:Key="WindowBorderBrush" Color="{DynamicResource WindowBorderColor}"/>
+    <SolidColorBrush x:Key="CaptionButtonBackgroundBrush" Color="{DynamicResource CaptionButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="CloseButtonBackgroundBrush" Color="{DynamicResource CloseButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="CloseButtonForegroundBrush" Color="{DynamicResource CloseButtonForegroundColor}"/>
+    <SolidColorBrush x:Key="MenuBackgroundBrush" Color="{DynamicResource MenuBackgroundColor}"/>
+    <SolidColorBrush x:Key="MenuForegroundBrush" Color="{DynamicResource MenuForegroundColor}"/>
+    <SolidColorBrush x:Key="MenuBorderBrush" Color="{DynamicResource MenuBorderColor}"/>
+    <SolidColorBrush x:Key="MenuSelectionBrush" Color="{DynamicResource MenuSelectionColor}"/>
+    <SolidColorBrush x:Key="MenuSeparatorBrush" Color="{DynamicResource MenuSeparatorColor}"/>
+    <SolidColorBrush x:Key="MenuDisabledTextBrush" Color="{DynamicResource MenuDisabledTextColor}"/>
+    <SolidColorBrush x:Key="ButtonBackgroundBrush" Color="{DynamicResource ButtonBackgroundColor}"/>
+    <SolidColorBrush x:Key="ButtonForegroundBrush" Color="{DynamicResource ButtonForegroundColor}"/>
+    <SolidColorBrush x:Key="TextBoxForegroundBrush" Color="{DynamicResource TextBoxForegroundColor}"/>
+    <SolidColorBrush x:Key="TextBoxBackgroundBrush" Color="{DynamicResource TextBoxBackgroundColor}"/>
+    <SolidColorBrush x:Key="TextBoxBorderBrush" Color="{DynamicResource TextBoxBorderColor}"/>
+    <SolidColorBrush x:Key="TextEditorForegroundBrush" Color="{DynamicResource TextEditorForegroundColor}"/>
+    <SolidColorBrush x:Key="TextEditorBackgroundBrush" Color="{DynamicResource TextEditorBackgroundColor}"/>
+    <SolidColorBrush x:Key="TextEditorCommentBrush" Color="{DynamicResource TextEditorCommentColor}"/>
+    <SolidColorBrush x:Key="ComboBoxForegroundBrush" Color="{DynamicResource ComboBoxForegroundColor}"/>
+    <SolidColorBrush x:Key="ComboBoxBackgroundBrush" Color="{DynamicResource ComboBoxBackgroundColor}"/>
+    <SolidColorBrush x:Key="ComboBoxBorderBrush" Color="{DynamicResource ComboBoxBorderColor}"/>
+    <SolidColorBrush x:Key="CheckBoxBackgroundBrush" Color="{DynamicResource CheckBoxBackgroundColor}"/>
+    <SolidColorBrush x:Key="CheckBoxBorderBrush" Color="{DynamicResource CheckBoxBorderColor}"/>
+    <SolidColorBrush x:Key="ScrollBarBackgroundBrush" Color="{DynamicResource ScrollBarBackgroundColor}"/>
+    <SolidColorBrush x:Key="ScrollBarThumbBrush" Color="{DynamicResource ScrollBarThumbColor}"/>
+    <SolidColorBrush x:Key="ScrollBarThumbMouseOverBrush" Color="{DynamicResource ScrollBarThumbMouseOverColor}"/>
+    <SolidColorBrush x:Key="ScrollBarThumbMouseDownBrush" Color="{DynamicResource ScrollBarThumbMouseDownColor}"/>
+</ResourceDictionary>

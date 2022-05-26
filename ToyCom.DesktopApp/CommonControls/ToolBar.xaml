@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="ToyCom.DesktopApp.CommonControls.ToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToyCom.DesktopApp.CommonControls"
+             mc:Ignorable="d" 
+             d:DesignWidth="800" d:DesignHeight="28">
+    <Grid Height="28">
+        <Grid.RowDefinitions>
+            <!-- Toolbar -->
+            <RowDefinition Height="24"/>
+            <!-- Margin -->
+            <RowDefinition Height="4"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="72"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="48"/>
+                <ColumnDefinition Width="12"/>
+                <ColumnDefinition Width="48"/>
+            </Grid.ColumnDefinitions>
+            <!-- Load Program -->
+            <Button Grid.Column="0" Width="24"
+                    HorizontalAlignment="Left"
+                    ToolTip="{DynamicResource l_Toolbar_Load}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/load.png"/>
+            </Button>
+            <!-- Save Program -->
+            <Button Grid.Column="0" Width="24"
+                    HorizontalAlignment="Right"
+                    ToolTip="{DynamicResource l_Toolbar_Save}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/save.png"/>
+            </Button>
+            <!-- Separator -->
+            <Rectangle Grid.Column="1" Width="1"
+                       HorizontalAlignment="Center"
+                       Fill="{DynamicResource MenuSeparatorBrush}"/>
+            <!-- Undo -->
+            <Button Grid.Column="2" Width="24"
+                    HorizontalAlignment="Left"
+                    ToolTip="{DynamicResource l_Toolbar_Undo}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/undo.png"/>
+            </Button>
+            <!-- Redo -->
+            <Button Grid.Column="2" Width="24"
+                    HorizontalAlignment="Right"
+                    ToolTip="{DynamicResource l_Toolbar_Redo}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/redo.png"/>
+            </Button>
+            <!-- Separator -->
+            <Rectangle Grid.Column="3" Width="1"
+                   HorizontalAlignment="Center"
+                   Fill="{DynamicResource MenuSeparatorBrush}"/>
+            <!-- Cut -->
+            <Button Grid.Column="4" Width="24"
+                    HorizontalAlignment="Left"
+                    ToolTip="{DynamicResource l_Toolbar_Cut}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/cut.png"/>
+            </Button>
+            <!-- Copy -->
+            <Button Grid.Column="4" Width="24"
+                    HorizontalAlignment="Center"
+                    ToolTip="{DynamicResource l_Toolbar_Copy}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/copy.png"/>
+            </Button>
+            <!-- Paste -->
+            <Button Grid.Column="4" Width="24"
+                    HorizontalAlignment="Right"
+                    ToolTip="{DynamicResource l_Toolbar_Paste}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/paste.png"/>
+            </Button>
+            <!-- Separator -->
+            <Rectangle Grid.Column="5" Width="1"
+                       HorizontalAlignment="Center"
+                       Fill="{DynamicResource MenuSeparatorBrush}"/>
+            <!-- Run (Automatically) -->
+            <Button Grid.Column="6" Width="24"
+                    HorizontalAlignment="Left"
+                    ToolTip="{DynamicResource l_Toolbar_RunAuto}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/run-green.png"/>
+            </Button>
+            <!-- Run (Calculations Only) -->
+            <Button Grid.Column="6" Width="24"
+                    HorizontalAlignment="Right"
+                    ToolTip="{DynamicResource l_Toolbar_RunCalc}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/run-cyan.png"/>
+            </Button>
+            <!-- Separator -->
+            <Rectangle Grid.Column="7" Width="1"
+                       HorizontalAlignment="Center"
+                       Fill="{DynamicResource MenuSeparatorBrush}"/>
+            <!-- Zoom Out -->
+            <Button Grid.Column="8" Width="24"
+                    HorizontalAlignment="Left"
+                    ToolTip="{DynamicResource l_Toolbar_ZoomOut}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image Source="/Icons/zoom-out.png"/>
+            </Button>
+            <!-- Zoom In -->
+            <Button Grid.Column="8" Width="24"
+                    HorizontalAlignment="Right"
+                    ToolTip="{DynamicResource l_Toolbar_ZoomIn}"
+                    Style="{StaticResource ToolbarButtonsStyle}">
+                <Image x:Name="Image" Source="/Icons/zoom-in.png"/>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- GroupBox Styles -->
+    <Style TargetType="GroupBox">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="GroupBox">
+                    <Grid Background="{DynamicResource PrimaryBackgroundBrush}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" FontSize="20"
+                                   Foreground="{DynamicResource PrimaryForegroundBrush}">
+                                <ContentPresenter ContentSource="Header" RecognizesAccessKey="True"/>
+                            </Label>
+                            <Rectangle Grid.Column="1" Height="1" Margin="0,1,6,0"
+                                       VerticalAlignment="Center" RenderOptions.EdgeMode="Unspecified"
+                                       Fill="{DynamicResource PrimaryForegroundBrush}"/>
+                        </Grid>
+                        <Border Grid.Row="1" BorderThickness="0" Padding="12"
+                                Background="{DynamicResource PrimaryBackgroundBrush}">
+                            <ContentPresenter/>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

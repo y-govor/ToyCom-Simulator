@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="ToyCom.DesktopApp.CommonControls.TitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ToyCom.DesktopApp.CommonControls"
+             xmlns:main="clr-namespace:ToyCom.DesktopApp"
+             mc:Ignorable="d"
+             d:DesignWidth="800" d:DesignHeight="32">
+    <!-- TitleBar -->
+    <Grid Height="32">
+        <Grid.ColumnDefinitions>
+            <!-- Reserve space for context menu -->
+            <ColumnDefinition Width="Auto"/>
+            <!-- Reserve space for window title -->
+            <ColumnDefinition/>
+            <!-- Reserve space for each caption button -->
+            <ColumnDefinition Width="46"/>
+            <ColumnDefinition Width="46"/>
+            <ColumnDefinition Width="46"/>
+        </Grid.ColumnDefinitions>
+        <!-- Context Menu -->
+        <Menu Grid.Column="0">
+            <MenuItem Header="{DynamicResource l_Menu_File}">
+                <MenuItem Header="{DynamicResource l_Menu_File_Load}"/>
+                <MenuItem Header="{DynamicResource l_Menu_File_Save}"/>
+                <Separator/>
+                <MenuItem Header="{DynamicResource l_Menu_File_Exit}"
+                          Command="main:CustomCommands.Exit"/>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource l_Menu_Edit}">
+                <MenuItem Header="{DynamicResource l_Menu_Edit_Undo}" Command="Undo"/>
+                <MenuItem Header="{DynamicResource l_Menu_Edit_Redo}" Command="Redo"/>
+                <Separator/>
+                <MenuItem Header="{DynamicResource l_Menu_Edit_Cut}" Command="Cut"/>
+                <MenuItem Header="{DynamicResource l_Menu_Edit_Copy}" Command="Copy"/>
+                <MenuItem Header="{DynamicResource l_Menu_Edit_Paste}" Command="Paste"/>
+                <MenuItem Header="{DynamicResource l_Menu_Edit_Delete}" Command="Delete"/>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource l_Menu_Tools}">
+                <MenuItem Header="{DynamicResource l_Menu_Tools_Run}">
+                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_Auto}"/>
+                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_StepOver}"/>
+                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_CalcOnly}"/>
+                </MenuItem>
+                <MenuItem Header="{DynamicResource l_Menu_Tools_Options}"
+                          Command="{Binding DataContext.LoadSettingsPageCommand,
+                                   RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                                   Mode=OneWay}"/>
+            </MenuItem>
+            <MenuItem Header="{DynamicResource l_Menu_Help}">
+                <MenuItem Header="{DynamicResource l_Menu_Help_Help}"/>
+                <MenuItem Header="{DynamicResource l_Menu_Help_About}"/>
+            </MenuItem>
+        </Menu>
+        <!-- Window Title -->
+        <TextBlock Grid.Column="0" Grid.ColumnSpan="5"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                   Text="{DynamicResource l_Window_Title}"
+                   Style="{StaticResource AppWindowTitle}"/>
+        <!-- Minimize Button -->
+        <Button Grid.Column="2" Width="46" Height="32"
+                Style="{StaticResource CaptionButtonStyle}"
+                RenderOptions.EdgeMode="Aliased"
+                Click="OnMinimizeButtonClick">
+            <Path Width="46" Height="32"
+                  Data="M 18,20 H 28"
+                  Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                  StrokeThickness="1"/>
+        </Button>
+        <!-- Maximize Button -->
+        <Button Name="MaximizeButton"
+                Grid.Column="3" Width="46" Height="32"
+                Style="{StaticResource CaptionButtonStyle}"
+                Click="OnMaximizeRestoreButtonClick">
+            <Path Width="46" Height="32"
+                  Data="M 18.5,10.5 H 27.5 V 19.5 H 18.5 Z"
+                  Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                  StrokeThickness="1"/>
+        </Button>
+        <!-- Restore Button -->
+        <Button Name="RestoreButton" Visibility="Hidden"
+                Grid.Column="3" Width="46" Height="32"
+                Style="{StaticResource CaptionButtonStyle}"
+                Click="OnMaximizeRestoreButtonClick">
+            <Path Width="46" Height="32"
+                  Data="M 18.5,12.5 H 25.5 V 19.5 H 18.5 Z M 20.5,12.5 V 10.5 H 27.5 V 17.5 H 25.5"
+                  Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                  StrokeThickness="1"/>
+        </Button>
+        <!-- Close Button -->
+        <Button Grid.Column="4" Width="46" Height="32"
+                Style="{StaticResource CloseButtonStyle}"
+                Click="OnCloseButtonClick">
+            <Path Width="46" Height="32"
+                  Data="M 18,11 L 27,20 M 18,20 L 27,11"
+                  Stroke="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType={x:Type Button}}}"
+                  StrokeThickness="1"/>
+        </Button>
+    </Grid>
+</UserControl>

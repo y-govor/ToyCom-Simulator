@@ -1,0 +1,53 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Button Style -->
+    <Style TargetType="Button">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border" CornerRadius="0" BorderThickness="0"
+                            Background="{DynamicResource ButtonBackgroundBrush}"
+                            TextBlock.Foreground="{DynamicResource ButtonForegroundBrush}">
+                        <!-- Button States -->
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <!-- Change Background Color on Mouse Over -->
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource ButtonMouseOverBackgroundColor}"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <!-- Change Background Color on Mouse Down -->
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource ButtonMouseDownBackgroundColor}"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <!-- Change Background Color When Disabled -->
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource ButtonDisabledBackgroundColor}"/>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(TextBlock.Foreground).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource ButtonDisabledForegroundColor}"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"
+                                          Margin="2" RecognizesAccessKey="True"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
