@@ -38,6 +38,9 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icons\app-icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -219,6 +222,9 @@
     <Resource Include="Icons\undo.png" />
     <Resource Include="Icons\zoom-in.png" />
     <Resource Include="Icons\zoom-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\app-icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
