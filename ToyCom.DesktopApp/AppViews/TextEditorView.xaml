@@ -15,8 +15,9 @@
                      HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Hidden"
                      FontFamily="{Binding FontFamily}" FontSize="{Binding FontSize}"/>
         <RichTextBox Grid.Column="1" Name="TextEditorControl"
+                     FontFamily="{Binding FontFamily}" FontSize="{Binding FontSize}"
+                     Loaded="TextEditorControl_Loaded" Unloaded="TextEditorControl_Unloaded"
                      TextChanged="TextEditorControl_TextChanged"
-                     ScrollViewer.ScrollChanged="TextEditorControl_ScrollChanged"
-                     FontFamily="{Binding FontFamily}" FontSize="{Binding FontSize}"/>
+                     ScrollViewer.ScrollChanged="TextEditorControl_ScrollChanged"/>
     </Grid>
 </UserControl>

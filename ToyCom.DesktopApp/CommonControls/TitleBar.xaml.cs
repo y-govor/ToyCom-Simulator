@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +49,15 @@ namespace ToyCom.DesktopApp.CommonControls
 
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
         {
+            // Delete temp file
+            string tmpFile = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "toycom_temp");
+
+            if(File.Exists(tmpFile))
+            {
+                File.Delete(tmpFile);
+            }
+
+            // Quit application
             Application.Current.Shutdown();
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -17,11 +18,11 @@ using System.Windows.Shapes;
 
 namespace ToyCom.DesktopApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
-    {
+	/// <summary>
+	/// Interaction logic for MainWindow.xaml
+	/// </summary>
+	public partial class MainWindow : Window
+	{
 		private const int WM_GETMINMAXINFO = 0x0024;
 		private const uint MONITOR_DEFAULTTONEAREST = 0x00000002;
 
@@ -82,9 +83,9 @@ namespace ToyCom.DesktopApp
 		}
 
 		public MainWindow()
-        {
-            InitializeComponent();
-        }
+		{
+			InitializeComponent();
+		}
 
 		protected override void OnSourceInitialized(EventArgs e)
 		{
@@ -121,14 +122,23 @@ namespace ToyCom.DesktopApp
 			return IntPtr.Zero;
 		}
 
-        private void ExitCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
-        {
+		private void ExitCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+		{
 			e.CanExecute = true;
-        }
+		}
 
-        private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
+		private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+		{
+			// Delete temp file
+			string tmpFile = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "toycom_temp");
+
+			if(File.Exists(tmpFile))
+			{
+				File.Delete(tmpFile);
+			}
+
+			// Quit application
 			Application.Current.Shutdown();
-        }
-    }
+		}
+	}
 }
