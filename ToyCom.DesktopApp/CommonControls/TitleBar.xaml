@@ -22,7 +22,8 @@
         <!-- Context Menu -->
         <Menu Grid.Column="0">
             <MenuItem Header="{DynamicResource l_Menu_File}">
-                <MenuItem Header="{DynamicResource l_Menu_File_Load}"/>
+                <MenuItem Header="{DynamicResource l_Menu_File_Load}"
+                          Command="main:CustomCommands.Load"/>
                 <MenuItem Header="{DynamicResource l_Menu_File_Save}"/>
                 <Separator/>
                 <MenuItem Header="{DynamicResource l_Menu_File_Exit}"

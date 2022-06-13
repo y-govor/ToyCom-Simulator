@@ -6,6 +6,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using ToyCom.Utilities;
 
 namespace ToyCom.DesktopApp
 {
@@ -58,20 +59,24 @@ namespace ToyCom.DesktopApp
 		// Apply parameters to the TextEditorControl when loaded
 		private void TextEditorControl_Loaded(object sender, RoutedEventArgs e)
 		{
-			string path = Path.Combine(Path.GetTempPath(), "toycom_temp");
+			/*
 			TextRange tr = new TextRange(TextEditorControl.Document.ContentStart,
 										 TextEditorControl.Document.ContentEnd);
 
 			// Restore contents of the TextEditorControl
-			if(String.IsNullOrWhiteSpace(tr.Text) && File.Exists(path))
-			{
-				using(FileStream fs = new FileStream(path, FileMode.Open))
-				{
-					TextEditorControl.TextChanged -= this.TextEditorControl_TextChanged;
-					tr.Load(fs, DataFormats.Text);
-					TextEditorControl.TextChanged += this.TextEditorControl_TextChanged;
-				}
+			if(String.IsNullOrWhiteSpace(tr.Text))
+            {
+				//TextEditorControl.TextChanged -= this.TextEditorControl_TextChanged;
+				//TextEditorControl.TextChanged += this.TextEditorControl_TextChanged;
+
+				MainWindowViewModel mw = (MainWindowViewModel)Application.Current.MainWindow.DataContext;
+				((TextEditorViewModel)mw.CurrentViewModel).TextEditorText = Global.TextEditorLastText;
 			}
+			*/
+
+			new TextRange(TextEditorControl.Document.ContentStart,
+				TextEditorControl.Document.ContentEnd).Text = Global.TextEditorLastText;
+
 
 			// Add line numbers
 			AddLines();
@@ -81,14 +86,11 @@ namespace ToyCom.DesktopApp
 			HighlightComments();
 		}
 
-		// Save TextEditorControl content to file
+		// Save TextEditorControl content
 		private void TextEditorControl_Unloaded(object sender, RoutedEventArgs e)
 		{
-			using(FileStream fs = new FileStream(Path.Combine(Path.GetTempPath(), "toycom_temp"), FileMode.Create))
-			{
-				new TextRange(TextEditorControl.Document.ContentStart,
-					TextEditorControl.Document.ContentEnd).Save(fs, DataFormats.Text);
-			}
+			Global.TextEditorLastText = new TextRange(TextEditorControl.Document.ContentStart,
+				TextEditorControl.Document.ContentEnd).Text;
 		}
 
 		#endregion

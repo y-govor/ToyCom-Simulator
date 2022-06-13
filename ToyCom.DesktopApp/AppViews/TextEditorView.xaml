@@ -18,6 +18,7 @@
                      FontFamily="{Binding FontFamily}" FontSize="{Binding FontSize}"
                      Loaded="TextEditorControl_Loaded" Unloaded="TextEditorControl_Unloaded"
                      TextChanged="TextEditorControl_TextChanged"
-                     ScrollViewer.ScrollChanged="TextEditorControl_ScrollChanged"/>
+                     ScrollViewer.ScrollChanged="TextEditorControl_ScrollChanged"
+                     local:RichTextBoxHelper.DocumentText="{Binding TextEditorText}"/>
     </Grid>
 </UserControl>

@@ -71,6 +71,7 @@
     <Compile Include="AppViews\SettingsPageView.xaml.cs">
       <DependentUpon>SettingsPageView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RichTextBoxHelper.cs" />
     <Compile Include="CustomCommands.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="AppViewModels\MainWindowViewModel.cs" />

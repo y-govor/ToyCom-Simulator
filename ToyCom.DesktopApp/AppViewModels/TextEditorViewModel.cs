@@ -1,5 +1,7 @@
 ﻿using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media;
+using ToyCom.Utilities;
 
 namespace ToyCom.DesktopApp
 {
@@ -7,7 +9,7 @@ namespace ToyCom.DesktopApp
     {
         public TextEditorModel Model { get; private set; }
 
-        #region Settings
+        #region Properties
 
         private FontFamily _fontFamily;
 
@@ -41,6 +43,22 @@ namespace ToyCom.DesktopApp
             }
         }
 
+        private string _textEditortext;
+
+        public string TextEditorText
+        {
+            get
+            {
+                return this._textEditortext;
+            }
+
+            set
+            {
+                this._textEditortext = value;
+                this.OnPropertyChanged("TextEditorText");
+            }
+        }
+
         #endregion
 
         public TextEditorViewModel(TextEditorModel model)
@@ -48,6 +66,7 @@ namespace ToyCom.DesktopApp
             this.Model = model;
             this.FontFamily = new FontFamily(this.Model.Settings.FontFamily);
             this.FontSize = this.Model.Settings.FontSize;
+            this.TextEditorText = Global.TextEditorLastText;
         }
     }
 }

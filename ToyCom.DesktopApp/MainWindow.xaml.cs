@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -15,6 +16,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ToyCom.Utilities;
 
 namespace ToyCom.DesktopApp
 {
@@ -23,7 +25,9 @@ namespace ToyCom.DesktopApp
 	/// </summary>
 	public partial class MainWindow : Window
 	{
-		private const int WM_GETMINMAXINFO = 0x0024;
+        #region Fields
+
+        private const int WM_GETMINMAXINFO = 0x0024;
 		private const uint MONITOR_DEFAULTTONEAREST = 0x00000002;
 
 		[DllImport("user32.dll")]
@@ -82,12 +86,16 @@ namespace ToyCom.DesktopApp
 			public POINT ptMaxTrackSize;
 		}
 
+		#endregion
+
 		public MainWindow()
 		{
 			InitializeComponent();
 		}
 
-		protected override void OnSourceInitialized(EventArgs e)
+        #region Methods
+
+        protected override void OnSourceInitialized(EventArgs e)
 		{
 			base.OnSourceInitialized(e);
 			((HwndSource)PresentationSource.FromVisual(this)).AddHook(HookProc);
@@ -122,23 +130,44 @@ namespace ToyCom.DesktopApp
 			return IntPtr.Zero;
 		}
 
-		private void ExitCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        #endregion
+
+        #region Custom Commands
+
+        private void ExitCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
 		{
 			e.CanExecute = true;
 		}
 
 		private void ExitCommand_Executed(object sender, ExecutedRoutedEventArgs e)
 		{
-			// Delete temp file
-			string tmpFile = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "toycom_temp");
-
-			if(File.Exists(tmpFile))
-			{
-				File.Delete(tmpFile);
-			}
-
 			// Quit application
 			Application.Current.Shutdown();
 		}
+
+		private void LoadCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = true;
+		}
+
+		private void LoadCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+		{
+			OpenFileDialog ofd = new OpenFileDialog();
+			ofd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+			// Read the text and write it to the temp file
+			if(ofd.ShowDialog() == true)
+            {
+				Global.TextEditorLastText = File.ReadAllText(ofd.FileName);
+
+				MainWindowViewModel mw = (MainWindowViewModel)Application.Current.MainWindow.DataContext;
+				if(mw.CurrentViewModel is TextEditorViewModel)
+                {
+					((TextEditorViewModel)mw.CurrentViewModel).TextEditorText = Global.TextEditorLastText;
+				}
+			}
+		}
+
+		#endregion
 	}
 }
