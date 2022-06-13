@@ -2,5 +2,5 @@
 {
     public enum Theme { Light, Dark }
     public enum Language { English, Ukrainian }
-    public enum Exception { None, WrongCommand, WrongOpCode }
+    public enum ToyComException { None, WrongCommand, WrongOpCode }
 }

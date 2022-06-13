@@ -19,7 +19,7 @@ namespace ToyCom.Utilities
         /// <param name="line">Line on which the error occured</param>
         /// <param name="code">Code string</param>
         /// <returns>Is code valid</returns>
-        public static bool ValidateCode(ref int line, ref Exception e, string code)
+        public static bool ValidateCode(ref int line, ref ToyComException e, string code)
         {
             string[] lines = TrimCode(code).ToArray();
 
@@ -38,7 +38,7 @@ namespace ToyCom.Utilities
                         // Set number of the line on which the error occured
                         line = i;
                         // Set exception
-                        e = Exception.WrongOpCode;
+                        e = ToyComException.WrongOpCode;
                         // Return result
                         return false;
                     }
@@ -48,7 +48,7 @@ namespace ToyCom.Utilities
                     // Set number of the line on which the error occured
                     line = i;
                     // Set exception
-                    e = Exception.WrongCommand;
+                    e = ToyComException.WrongCommand;
                     // Return result
                     return false;
                 }
