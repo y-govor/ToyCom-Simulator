@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using ToyCom.Utilities;
+using Tomlet;
 
 namespace ToyCom.DesktopApp
 {
@@ -252,6 +254,9 @@ namespace ToyCom.DesktopApp
 
             ((MainWindowViewModel)Application.Current.MainWindow.DataContext).Settings =
                 this.Model.Settings;
+
+            // Save settings to config file
+            File.WriteAllText("settings.cfg", TomletMain.TomlStringFrom(this.Model.Settings));
         }
     }
 }
