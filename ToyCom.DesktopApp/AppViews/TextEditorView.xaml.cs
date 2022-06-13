@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -59,24 +56,8 @@ namespace ToyCom.DesktopApp
 		// Apply parameters to the TextEditorControl when loaded
 		private void TextEditorControl_Loaded(object sender, RoutedEventArgs e)
 		{
-			/*
-			TextRange tr = new TextRange(TextEditorControl.Document.ContentStart,
-										 TextEditorControl.Document.ContentEnd);
-
-			// Restore contents of the TextEditorControl
-			if(String.IsNullOrWhiteSpace(tr.Text))
-            {
-				//TextEditorControl.TextChanged -= this.TextEditorControl_TextChanged;
-				//TextEditorControl.TextChanged += this.TextEditorControl_TextChanged;
-
-				MainWindowViewModel mw = (MainWindowViewModel)Application.Current.MainWindow.DataContext;
-				((TextEditorViewModel)mw.CurrentViewModel).TextEditorText = Global.TextEditorLastText;
-			}
-			*/
-
 			new TextRange(TextEditorControl.Document.ContentStart,
 				TextEditorControl.Document.ContentEnd).Text = Global.TextEditorLastText;
-
 
 			// Add line numbers
 			AddLines();
