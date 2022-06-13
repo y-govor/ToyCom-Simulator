@@ -43,6 +43,10 @@ namespace ToyCom.DesktopApp
 		{
 			TextEditorControl.TextChanged -= this.TextEditorControl_TextChanged;
 
+			// Save text
+			Global.TextEditorLastText = new TextRange(TextEditorControl.Document.ContentStart,
+				TextEditorControl.Document.ContentEnd).Text;
+
 			// Add line numbers
 			AddLines();
 			// Calculate line column width
