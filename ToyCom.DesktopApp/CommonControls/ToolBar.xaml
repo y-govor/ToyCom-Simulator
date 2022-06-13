@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ToyCom.DesktopApp.CommonControls"
+             xmlns:main="clr-namespace:ToyCom.DesktopApp"
              mc:Ignorable="d" 
              d:DesignWidth="800" d:DesignHeight="28">
     <Grid Height="28">
@@ -29,14 +30,16 @@
             <Button Grid.Column="0" Width="24"
                     HorizontalAlignment="Left"
                     ToolTip="{DynamicResource l_Toolbar_Load}"
-                    Style="{StaticResource ToolbarButtonsStyle}">
+                    Style="{StaticResource ToolbarButtonsStyle}"
+                    Command="main:CustomCommands.Load">
                 <Image Source="/Icons/load.png"/>
             </Button>
             <!-- Save Program -->
             <Button Grid.Column="0" Width="24"
                     HorizontalAlignment="Right"
                     ToolTip="{DynamicResource l_Toolbar_Save}"
-                    Style="{StaticResource ToolbarButtonsStyle}">
+                    Style="{StaticResource ToolbarButtonsStyle}"
+                    Command="main:CustomCommands.Save">
                 <Image Source="/Icons/save.png"/>
             </Button>
             <!-- Separator -->

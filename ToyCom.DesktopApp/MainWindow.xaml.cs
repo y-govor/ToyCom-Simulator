@@ -144,7 +144,7 @@ namespace ToyCom.DesktopApp
 			OpenFileDialog ofd = new OpenFileDialog();
 			ofd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
 
-			// Read the text and write it to the temp file
+			// Read the text from file and load it into the text editor
 			if(ofd.ShowDialog() == true)
             {
 				Global.TextEditorLastText = File.ReadAllText(ofd.FileName);
@@ -154,6 +154,31 @@ namespace ToyCom.DesktopApp
                 {
 					vm.TextEditorText = Global.TextEditorLastText;
 				}
+			}
+		}
+
+		private void SaveCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = true;
+		}
+
+		private void SaveCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+		{
+			SaveFileDialog sfd = new SaveFileDialog();
+			sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+			// Write the text to file
+			if(sfd.ShowDialog() == true)
+			{
+				MainWindowViewModel mw = (MainWindowViewModel)Application.Current.MainWindow.DataContext;
+				if(mw.CurrentViewModel is TextEditorViewModel vm)
+				{
+					File.WriteAllText(sfd.FileName, vm.TextEditorText);
+				}
+				else
+                {
+					File.WriteAllText(sfd.FileName, Global.TextEditorLastText);
+				}				
 			}
 		}
 

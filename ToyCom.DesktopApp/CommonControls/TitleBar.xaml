@@ -24,7 +24,8 @@
             <MenuItem Header="{DynamicResource l_Menu_File}">
                 <MenuItem Header="{DynamicResource l_Menu_File_Load}"
                           Command="main:CustomCommands.Load"/>
-                <MenuItem Header="{DynamicResource l_Menu_File_Save}"/>
+                <MenuItem Header="{DynamicResource l_Menu_File_Save}"
+                          Command="main:CustomCommands.Save"/>
                 <Separator/>
                 <MenuItem Header="{DynamicResource l_Menu_File_Exit}"
                           Command="main:CustomCommands.Exit"/>

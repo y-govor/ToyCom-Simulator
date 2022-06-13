@@ -15,6 +15,9 @@
         <CommandBinding Command="local:CustomCommands.Load"
                         CanExecute="LoadCommand_CanExecute"
                         Executed="LoadCommand_Executed"/>
+        <CommandBinding Command="local:CustomCommands.Save"
+                        CanExecute="SaveCommand_CanExecute"
+                        Executed="SaveCommand_Executed"/>
         <CommandBinding Command="local:CustomCommands.Exit"
                         CanExecute="ExitCommand_CanExecute"
                         Executed="ExitCommand_Executed"/>
