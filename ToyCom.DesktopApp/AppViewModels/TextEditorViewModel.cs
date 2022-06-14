@@ -1,4 +1,6 @@
-﻿using System.Windows.Media;
+﻿using System;
+using System.Text;
+using System.Windows.Media;
 using ToyCom.Utilities;
 
 namespace ToyCom.DesktopApp
@@ -57,6 +59,22 @@ namespace ToyCom.DesktopApp
             }
         }
 
+        private string _textEditorlines;
+
+        public string TextEditorLines
+        {
+            get
+            {
+                return this._textEditorlines;
+            }
+
+            set
+            {
+                this._textEditorlines = value;
+                this.OnPropertyChanged("TextEditorLines");
+            }
+        }
+
         #endregion
 
         public TextEditorViewModel(TextEditorModel model)
@@ -65,6 +83,14 @@ namespace ToyCom.DesktopApp
             this.FontFamily = new FontFamily(this.Model.Settings.FontFamily);
             this.FontSize = this.Model.Settings.FontSize;
             this.TextEditorText = Global.TextEditorLastText;
+
+            if(this.Model.Settings.ShowLines)
+            {
+                if(Global.TextEditorLastText == String.Empty)
+                {
+                    this.TextEditorLines = "0";
+                }
+            }
         }
     }
 }

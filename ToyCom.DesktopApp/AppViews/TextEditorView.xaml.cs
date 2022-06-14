@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
@@ -21,10 +22,6 @@ namespace ToyCom.DesktopApp
 			// If ShowLines option is enabled
 			if(mw.Settings.ShowLines)
 			{
-				// Add first line number
-				LinesRTBControl.Document.Blocks.Clear();
-				LinesRTBControl.Document.Blocks.Add(new Paragraph(new Run("0")));
-
 				// Calculate line column width
 				LineNumColumn.Width = new GridLength(mw.Settings.FontSize);
 			}
@@ -110,10 +107,26 @@ namespace ToyCom.DesktopApp
 			// If ShowLines option is enabled
 			if(mw.Settings.ShowLines)
 			{
-				LinesRTBControl.Document.Blocks.Clear();
-				for(int i = 0; i < TextEditorControl.Document.Blocks.Count; i++)
+				if(mw.CurrentViewModel is TextEditorViewModel vm)
 				{
-					LinesRTBControl.Document.Blocks.Add(new Paragraph(new Run(i.ToString())));
+					if(TextEditorControl.Document.Blocks.Count == 0)
+                    {
+						vm.TextEditorLines = "0";
+						return;
+					}
+
+					StringBuilder sb = new StringBuilder();
+
+					for(int i = 0; i < TextEditorControl.Document.Blocks.Count; i++)
+					{
+						sb.Append(i);
+						if(i < TextEditorControl.Document.Blocks.Count - 1)
+						{
+							sb.AppendLine();
+						}
+					}
+
+					vm.TextEditorLines = sb.ToString();
 				}
 			}
 		}
@@ -135,6 +148,11 @@ namespace ToyCom.DesktopApp
 					num /= 10;
 					digits++;
 				}
+
+				if(digits == 0)
+                {
+					digits++;
+                }
 
 				// Change LineNumColumn width
 				LineNumColumn.Width = new GridLength(mw.Settings.FontSize * digits);
