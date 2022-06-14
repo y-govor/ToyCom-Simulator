@@ -12,6 +12,10 @@
             <DataTemplate DataType="{x:Type local:SettingsPageViewModel}">
                 <local:SettingsPageView/>
             </DataTemplate>
+            <!-- Run Program Page ViewModel -->
+            <DataTemplate DataType="{x:Type local:RunPageViewModel}">
+                <local:RunPageView/>
+            </DataTemplate>
             <!-- Styles -->
             <ResourceDictionary.MergedDictionaries>
                 <!-- Default Language -->
