@@ -27,7 +27,7 @@
                 <ResourceDictionary Source="/Styles/Controls/RichTextBox.xaml"/>
                 <ResourceDictionary Source="/Styles/Controls/ScrollBar.xaml"/>
                 <ResourceDictionary Source="/Styles/Controls/TextBox.xaml"/>
-                <ResourceDictionary Source="/Styles/Controls/Toolbar.xaml"/>
+                <ResourceDictionary Source="/Styles/Controls/ToolBar.xaml"/>
                 <ResourceDictionary Source="/Styles/Controls/ToolTip.xaml"/>
                 <ResourceDictionary Source="/Styles/Controls/Window.xaml"/>
             </ResourceDictionary.MergedDictionaries>

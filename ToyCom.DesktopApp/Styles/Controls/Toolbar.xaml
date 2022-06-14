@@ -1,21 +1,68 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Toolbar Buttons Style -->
-    <Style x:Key="ToolbarButtonsStyle" TargetType="Button">
+    <!-- ToolBarTray -->
+    <Style x:Key="{x:Type ToolBarTray}" TargetType="{x:Type ToolBarTray}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundBrush}"/>
+    </Style>
+    <!-- ToolBar -->
+    <Style x:Key="{x:Type ToolBar}" TargetType="{x:Type ToolBar}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Border Name="Border" BorderThickness="0"
-                            Background="{DynamicResource PrimaryBackgroundBrush}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ControlTemplate TargetType="{x:Type ToolBar}">
+                    <Border x:Name="Border" BorderThickness="0">
+                        <Border.Background>
+                            <SolidColorBrush Color="{DynamicResource PrimaryBackgroundColor}"/>
+                        </Border.Background>
+                        <DockPanel>
+                            <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="True" Margin="0,1,2,2"/>
+                        </DockPanel>
                     </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="Border" Property="Background"
-                                    Value="{DynamicResource MenuSelectionBrush}"/>
-                        </Trigger>
-                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- ToolBar.ButtonStyleKey -->
+    <Style x:Key="{x:Static ToolBar.ButtonStyleKey}" TargetType="{x:Type Button}">
+        <Setter Property="OverridesDefaultStyle" Value="True"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ButtonBase}">
+                    <Border x:Name="Border" BorderThickness="0">
+                        <Border.Background>
+                            <SolidColorBrush Color="{DynamicResource PrimaryBackgroundColor}"/>
+                        </Border.Background>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="Pressed">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource MenuSelectionColor}"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource MenuSelectionColor}"/>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Border" Duration="0"
+                                                        Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)"
+                                                        To="{DynamicResource MenuSelectionColor}"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <ContentPresenter Margin="2" RecognizesAccessKey="True"
+                                          HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
