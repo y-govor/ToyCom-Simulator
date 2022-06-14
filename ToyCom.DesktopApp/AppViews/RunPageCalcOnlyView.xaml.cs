@@ -18,9 +18,9 @@ namespace ToyCom.DesktopApp
     /// <summary>
     /// Interaction logic for RunPageView.xaml
     /// </summary>
-    public partial class RunPageView : UserControl
+    public partial class RunPageCalcOnlyView : UserControl
     {
-        public RunPageView()
+        public RunPageCalcOnlyView()
         {
             InitializeComponent();
         }

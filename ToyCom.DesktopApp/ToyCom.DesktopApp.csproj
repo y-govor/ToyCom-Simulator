@@ -66,12 +66,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AppModels\RunPageModel.cs" />
+    <Compile Include="AppModels\RunPageCalcOnlyModel.cs" />
     <Compile Include="AppModels\SettingsPageModel.cs" />
-    <Compile Include="AppViewModels\RunPageViewModel.cs" />
+    <Compile Include="AppViewModels\RunPageCalcOnlyViewModel.cs" />
     <Compile Include="AppViewModels\SettingsPageViewModel.cs" />
-    <Compile Include="AppViews\RunPageView.xaml.cs">
-      <DependentUpon>RunPageView.xaml</DependentUpon>
+    <Compile Include="AppViews\RunPageCalcOnlyView.xaml.cs">
+      <DependentUpon>RunPageCalcOnlyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppViews\SettingsPageView.xaml.cs">
       <DependentUpon>SettingsPageView.xaml</DependentUpon>
@@ -93,7 +93,7 @@
     </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="ViewModelBase.cs" />
-    <Page Include="AppViews\RunPageView.xaml">
+    <Page Include="AppViews\RunPageCalcOnlyView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

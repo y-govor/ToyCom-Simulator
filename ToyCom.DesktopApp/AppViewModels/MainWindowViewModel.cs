@@ -8,6 +8,10 @@ namespace ToyCom.DesktopApp
         public ICommand LoadTextEditorCommand { get; private set; }
         public ICommand LoadSettingsPageCommand { get; private set; }
 
+        public ICommand LoadRunPageAutomaticCommand { get; private set; }
+        public ICommand LoadRunPageStepOverCommand { get; private set; }
+        public ICommand LoadRunPageCalcOnlyCommand { get; private set; }
+
         // ViewModel that is currently bound to the ContentControl
         private ViewModelBase _currentViewModel;
 
@@ -70,6 +74,15 @@ namespace ToyCom.DesktopApp
             // Hook up Commands to associated methods
             this.LoadTextEditorCommand = new DelegateCommand(o => this.LoadTextEditor());
             this.LoadSettingsPageCommand = new DelegateCommand(o => this.LoadSettingsPage());
+
+            this.LoadRunPageAutomaticCommand = new DelegateCommand(o =>
+                this.LoadRunPage(ProgramExecutionMode.Automatic));
+
+            this.LoadRunPageStepOverCommand = new DelegateCommand(o =>
+                this.LoadRunPage(ProgramExecutionMode.StepOver));
+
+            this.LoadRunPageCalcOnlyCommand = new DelegateCommand(o =>
+                this.LoadRunPage(ProgramExecutionMode.CalculationsOnly));
         }
 
         private void LoadTextEditor()
@@ -80,6 +93,14 @@ namespace ToyCom.DesktopApp
         private void LoadSettingsPage()
         {
             this.CurrentViewModel = new SettingsPageViewModel(new SettingsPageModel(this.Settings));
+        }
+
+        private void LoadRunPage(ProgramExecutionMode mode)
+        {
+            if(mode == ProgramExecutionMode.CalculationsOnly)
+            {
+                this.CurrentViewModel = new RunPageCalcOnlyViewModel(new RunPageCalcOnlyModel());
+            }
         }
     }
 }

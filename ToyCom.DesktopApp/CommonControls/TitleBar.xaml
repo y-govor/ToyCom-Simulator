@@ -43,7 +43,10 @@
                 <MenuItem Header="{DynamicResource l_Menu_Tools_Run}">
                     <MenuItem Header="{DynamicResource l_Menu_Tools_Run_Auto}"/>
                     <MenuItem Header="{DynamicResource l_Menu_Tools_Run_StepOver}"/>
-                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_CalcOnly}"/>
+                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_CalcOnly}"
+                              Command="{Binding DataContext.LoadRunPageCalcOnlyCommand,
+                                      RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                                      Mode=OneWay}"/>
                 </MenuItem>
                 <MenuItem Header="{DynamicResource l_Menu_Tools_Options}"
                           Command="{Binding DataContext.LoadSettingsPageCommand,

@@ -92,7 +92,10 @@
                 <!-- Run (Calculations Only) -->
                 <Button Grid.Column="6" Width="24"
                     HorizontalAlignment="Right"
-                    ToolTip="{DynamicResource l_Toolbar_RunCalc}">
+                    ToolTip="{DynamicResource l_Toolbar_RunCalc}"
+                    Command="{Binding DataContext.LoadRunPageCalcOnlyCommand,
+                            RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                            Mode=OneWay}">
                     <Image Source="/Icons/run-cyan.png"/>
                 </Button>
                 <!-- Separator -->
