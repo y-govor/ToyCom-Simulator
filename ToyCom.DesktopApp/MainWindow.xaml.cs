@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
+using Tomlet;
 using ToyCom.Utilities;
 
 namespace ToyCom.DesktopApp
@@ -179,6 +180,54 @@ namespace ToyCom.DesktopApp
                 {
 					File.WriteAllText(sfd.FileName, Global.TextEditorLastText);
 				}				
+			}
+		}
+
+		private void ZoomInCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = true;
+		}
+
+		private void ZoomInCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+		{
+			MainWindowViewModel mw = (MainWindowViewModel)Application.Current.MainWindow.DataContext;
+
+			if(mw.CurrentViewModel is TextEditorViewModel tevm)
+			{
+				tevm.FontSize++;
+				tevm.Model.Settings.FontSize++;
+
+				// Save settings to config file
+				File.WriteAllText("settings.cfg", TomletMain.TomlStringFrom(tevm.Model.Settings));
+			}
+			else if(mw.CurrentViewModel is SettingsPageViewModel spvm)
+            {
+				spvm.FontSize++;
+				spvm.UpdateSettings();
+            }
+		}
+
+		private void ZoomOutCommand_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+		{
+			e.CanExecute = true;
+		}
+
+		private void ZoomOutCommand_Executed(object sender, ExecutedRoutedEventArgs e)
+		{
+			MainWindowViewModel mw = (MainWindowViewModel)Application.Current.MainWindow.DataContext;
+
+			if(mw.CurrentViewModel is TextEditorViewModel tevm)
+			{
+				tevm.FontSize--;
+				tevm.Model.Settings.FontSize--;
+
+				// Save settings to config file
+				File.WriteAllText("settings.cfg", TomletMain.TomlStringFrom(tevm.Model.Settings));
+			}
+			else if(mw.CurrentViewModel is SettingsPageViewModel spvm)
+			{
+				spvm.FontSize--;
+				spvm.UpdateSettings();
 			}
 		}
 

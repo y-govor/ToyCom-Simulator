@@ -242,7 +242,7 @@ namespace ToyCom.DesktopApp
         }
 
         // Update the settings
-        private void UpdateSettings()
+        public void UpdateSettings()
         {
             this.Model.Settings.Language = this.Languages[this.SelectedLanguageIndex];
             this.Model.Settings.Theme = this.Themes[this.SelectedThemeIndex];

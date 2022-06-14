@@ -18,6 +18,12 @@
         <CommandBinding Command="local:CustomCommands.Save"
                         CanExecute="SaveCommand_CanExecute"
                         Executed="SaveCommand_Executed"/>
+        <CommandBinding Command="local:CustomCommands.ZoomIn"
+                        CanExecute="ZoomInCommand_CanExecute"
+                        Executed="ZoomInCommand_Executed"/>
+        <CommandBinding Command="local:CustomCommands.ZoomOut"
+                        CanExecute="ZoomOutCommand_CanExecute"
+                        Executed="ZoomOutCommand_Executed"/>
         <CommandBinding Command="local:CustomCommands.Exit"
                         CanExecute="ExitCommand_CanExecute"
                         Executed="ExitCommand_Executed"/>

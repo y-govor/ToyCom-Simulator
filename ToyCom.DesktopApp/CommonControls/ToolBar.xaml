@@ -104,13 +104,15 @@
                 <!-- Zoom Out -->
                 <Button Grid.Column="8" Width="24"
                     HorizontalAlignment="Left"
-                    ToolTip="{DynamicResource l_Toolbar_ZoomOut}">
+                    ToolTip="{DynamicResource l_Toolbar_ZoomOut}"
+                    Command="main:CustomCommands.ZoomOut">
                     <Image Source="/Icons/zoom-out.png"/>
                 </Button>
                 <!-- Zoom In -->
                 <Button Grid.Column="8" Width="24"
                     HorizontalAlignment="Right"
-                    ToolTip="{DynamicResource l_Toolbar_ZoomIn}">
+                    ToolTip="{DynamicResource l_Toolbar_ZoomIn}"
+                    Command="main:CustomCommands.ZoomIn">
                     <Image x:Name="Image" Source="/Icons/zoom-in.png"/>
                 </Button>
             </ToolBar>
