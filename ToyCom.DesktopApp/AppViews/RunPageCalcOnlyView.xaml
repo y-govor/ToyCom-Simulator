@@ -6,4 +6,46 @@
              xmlns:local="clr-namespace:ToyCom.DesktopApp"
              mc:Ignorable="d" 
              d:DesignWidth="800" d:DesignHeight="420">
+    <Grid Background="{DynamicResource PrimaryBackgroundBrush}">
+        <Grid.ColumnDefinitions>
+            <!-- Left margin -->
+            <ColumnDefinition Width="10*"/>
+            <!-- Content -->
+            <ColumnDefinition Width="80*"/>
+            <!-- Right margin -->
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <!-- Margin -->
+            <RowDefinition Height="4*"/>
+            <!-- Input Field -->
+            <RowDefinition Height="26"/>
+            <!-- Log Window -->
+            <RowDefinition Height="100*"/>
+            <!-- Back button -->
+            <RowDefinition Height="Auto"/>
+            <!-- Margin -->
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <!-- Input Field -->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Input [-9999..9999]" FontSize="20" Margin="0,0,12,0"/>
+            <TextBox Grid.Column="1" Width="60" TextAlignment="Center"
+                     HorizontalAlignment="Left" FontFamily="Consolas" FontSize="18"/>
+        </Grid>
+        <!-- Log Window -->
+        <Grid Grid.Column="1" Grid.Row="2" Margin="0,10,0,0">
+            <TextBox AcceptsReturn="True" TextAlignment="Left" VerticalContentAlignment="Top"
+                     FontFamily="Consolas" FontSize="18" IsReadOnly="True"/>
+        </Grid>
+        <!-- Back button -->
+        <Grid Grid.Column="1" Grid.Row="3" Margin="0,12,0,0">
+            <Button Width="120" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Content="Back"/>
+        </Grid>
+    </Grid>
 </UserControl>
