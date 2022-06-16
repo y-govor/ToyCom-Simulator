@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Windows;
+using System.Windows.Input;
 using ToyCom.Utilities;
 
 namespace ToyCom.DesktopApp
@@ -97,6 +98,17 @@ namespace ToyCom.DesktopApp
 
         private void LoadRunPage(ProgramExecutionMode mode)
         {
+            int line = -1;
+            ToyComException e = ToyComException.None;
+            
+            // Validate code
+            if(!Validate.ValidateCode(ref line, ref e, Global.TextEditorLastText))
+            {
+                MessageBox.Show($"{e}Exception on line {line}", "Compilation error",
+                    MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             if(mode == ProgramExecutionMode.CalculationsOnly)
             {
                 this.CurrentViewModel = new RunPageCalcOnlyViewModel(new RunPageCalcOnlyModel());

@@ -25,7 +25,7 @@ namespace ToyCom.Utilities
 
             for(int i = 0; i < lines.Length; i++)
             {
-                if(lines[i][0] == ';' || String.IsNullOrEmpty(lines[i]))
+                if(String.IsNullOrEmpty(lines[i]) || lines[i][0] == ';')
                 {
                     // Skip loop iteration if the line is a comment or empty
                     continue;
