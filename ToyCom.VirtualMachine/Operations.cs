@@ -32,10 +32,13 @@ namespace ToyCom.VirtualMachine
 
             if(((cpu.Acc + value) > 9999) || ((cpu.Acc + value) < -9999))
             {
-                throw new Exception("OverflowException");
+                throw new Exception("Overflow");
             }
 
             cpu.Acc += value;
+
+            cpu.SF = (cpu.Acc == 0) ? true : false;
+            cpu.ZF = (cpu.Acc < 0) ? true : false;
         }
 
         // 04: Sub
@@ -46,10 +49,13 @@ namespace ToyCom.VirtualMachine
 
             if(((cpu.Acc - value) > 9999) || ((cpu.Acc - value) < -9999))
             {
-                throw new Exception("OverflowException");
+                throw new Exception("Overflow");
             }
 
             cpu.Acc -= value;
+
+            cpu.SF = (cpu.Acc == 0) ? true : false;
+            cpu.ZF = (cpu.Acc < 0) ? true : false;
         }
 
         // 05: Mul
@@ -60,10 +66,13 @@ namespace ToyCom.VirtualMachine
 
             if(((cpu.Acc * value) > 9999) || ((cpu.Acc * value) < -9999))
             {
-                throw new Exception("OverflowException");
+                throw new Exception("Overflow");
             }
 
             cpu.Acc *= value;
+
+            cpu.SF = (cpu.Acc == 0) ? true : false;
+            cpu.ZF = (cpu.Acc < 0) ? true : false;
         }
 
         // 06: Div
@@ -72,10 +81,13 @@ namespace ToyCom.VirtualMachine
         {
             if(ram[operand] == null || ram[operand] == 0)
             {
-                throw new Exception("DivideByZeroException");
+                throw new Exception("Division By Zero");
             }
 
             cpu.Acc /= ram[operand];
+
+            cpu.SF = (cpu.Acc == 0) ? true : false;
+            cpu.ZF = (cpu.Acc < 0) ? true : false;
         }
 
         // 07: Input

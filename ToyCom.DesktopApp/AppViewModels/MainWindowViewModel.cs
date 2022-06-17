@@ -111,7 +111,7 @@ namespace ToyCom.DesktopApp
 
             if(mode == ProgramExecutionMode.CalculationsOnly)
             {
-                this.CurrentViewModel = new RunPageCalcOnlyViewModel(new RunPageCalcOnlyModel());
+                this.CurrentViewModel = new RunPageCalcOnlyViewModel(new RunPageCalcOnlyModel(this.Settings));
             }
         }
     }
