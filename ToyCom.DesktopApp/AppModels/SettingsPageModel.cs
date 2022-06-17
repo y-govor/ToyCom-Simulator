@@ -16,6 +16,7 @@ namespace ToyCom.DesktopApp
         public bool IsToolbarVisible { get; set; }
         public bool IsLineNumbersVisible { get; set; }
         public bool IsCommentHighlightEnabled { get; set; }
+        public int ExecutionDelay { get; set; }
 
         public SettingsPageModel(Settings settings)
         {

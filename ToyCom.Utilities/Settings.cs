@@ -9,6 +9,7 @@
         public string Language { get; set; }
         public string Theme { get; set; }
         public bool ShowToolbar { get; set; }
+        public int ExecutionDelay { get; set; }
 
         // Text Editor Settings
         public string FontFamily { get; set; }
@@ -21,6 +22,7 @@
             Language = DefaultSettings.Language;
             Theme = DefaultSettings.Theme;
             ShowToolbar = DefaultSettings.ShowToolbar;
+            ExecutionDelay = DefaultSettings.ExecutionDelay;
             FontFamily = DefaultSettings.FontFamily;
             FontSize = (uint)DefaultSettings.FontSize;
             ShowLines = DefaultSettings.ShowLines;

@@ -101,8 +101,8 @@ namespace ToyCom.DesktopApp
 
                         if(run.Model.ExecutionMode == ProgramExecutionMode.Automatic)
                         {
-                            // Wait 1 second
-                            Thread.Sleep(1000);
+                            // Delay between executing commands
+                            Thread.Sleep(run.Model.Settings.ExecutionDelay);
                         }
                         else
                         {

@@ -30,6 +30,7 @@
                     <RowDefinition Height="32"/>
                     <RowDefinition Height="32"/>
                     <RowDefinition Height="32"/>
+                    <RowDefinition Height="32"/>
                 </Grid.RowDefinitions>
                 <!-- Language selection -->
                 <Grid Grid.Row="0">
@@ -59,8 +60,21 @@
                               ItemsSource="{Binding Themes}"
                               SelectedIndex="{Binding SelectedThemeIndex}"/>
                 </Grid>
-                <!-- Toolbar visibility option -->
+                <!-- Execution delay -->
                 <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Height="32" FontSize="16" VerticalAlignment="Top"
+                           Content="{DynamicResource l_Settings_General_Delay}"/>
+                    <TextBox Grid.Column="1" Width="120" Height="24" HorizontalAlignment="Left"
+                             VerticalAlignment="Center" Text="{Binding ExecutionDelay}"/>
+                    
+                </Grid>
+                <!-- Toolbar visibility option -->
+                <Grid Grid.Row="3">
                     <CheckBox Name="ShowToolbarCB" Margin="6,0,0,0" VerticalAlignment="Center"
                               Content="{DynamicResource l_Settings_General_ShowToolbar}"
                               IsChecked="{Binding IsToolbarVisible}"/>
@@ -109,10 +123,9 @@
             </Grid>
         </GroupBox>
         <!-- Back button -->
-        <GroupBox Grid.Column="1" Grid.Row="2" Header="">
-            <Button Width="120" Height="32" VerticalAlignment="Top" HorizontalAlignment="Left"
-                    Content="{DynamicResource l_Settings_Back}"
-                    Command="{Binding LoadTextEditorCommand}"/>
-        </GroupBox>
+        <Button Grid.Column="1" Grid.Row="2" Width="120" Height="32" Margin="0,12,0,0"
+                VerticalAlignment="Top" HorizontalAlignment="Left"
+                Content="{DynamicResource l_Settings_Back}"
+                Command="{Binding LoadTextEditorCommand}"/>
     </Grid>
 </UserControl>

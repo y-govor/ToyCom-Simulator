@@ -43,6 +43,7 @@
     <v:String x:Key="l_Settings_General">General Settings</v:String>
     <v:String x:Key="l_Settings_General_Lang">Language</v:String>
     <v:String x:Key="l_Settings_General_Theme">Theme</v:String>
+    <v:String x:Key="l_Settings_General_Delay">Delay</v:String>
     <v:String x:Key="l_Settings_General_ShowToolbar">Show Toolbar</v:String>
     <v:String x:Key="l_Settings_Editor">Text Editor Settings</v:String>
     <v:String x:Key="l_Settings_Editor_Font">Font</v:String>

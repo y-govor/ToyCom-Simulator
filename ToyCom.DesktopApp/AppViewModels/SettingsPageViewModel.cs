@@ -163,6 +163,20 @@ namespace ToyCom.DesktopApp
             }
         }
 
+        public int ExecutionDelay
+        {
+            get
+            {
+                return this.Model.ExecutionDelay;
+            }
+            set
+            {
+                this.Model.ExecutionDelay = value;
+                this.OnPropertyChanged("ExecutionDelay");
+            }
+
+        }
+
         #endregion
 
         public SettingsPageViewModel(SettingsPageModel model)
@@ -230,6 +244,8 @@ namespace ToyCom.DesktopApp
             this.IsLineNumbersVisible = this.Model.Settings.ShowLines;
             // Comment highlight
             this.IsCommentHighlightEnabled = this.Model.Settings.HighlightComments;
+            // Delay between executing commands
+            this.ExecutionDelay = this.Model.Settings.ExecutionDelay;
         }
 
         private void LoadTextEditor()
@@ -251,6 +267,7 @@ namespace ToyCom.DesktopApp
             this.Model.Settings.FontSize = this.FontSize;
             this.Model.Settings.ShowLines = this.IsLineNumbersVisible;
             this.Model.Settings.HighlightComments = this.IsCommentHighlightEnabled;
+            this.Model.Settings.ExecutionDelay = this.ExecutionDelay;
 
             ((MainWindowViewModel)Application.Current.MainWindow.DataContext).Settings =
                 this.Model.Settings;

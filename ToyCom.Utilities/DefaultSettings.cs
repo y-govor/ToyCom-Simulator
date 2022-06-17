@@ -12,6 +12,7 @@ namespace ToyCom.Utilities
         public static string Language = "English";
         public static string Theme = "Light";
         public static bool ShowToolbar = true;
+        public static int ExecutionDelay = 1000;
 
         // Text Editor Settings
         public static string FontFamily = "Consolas";

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ToyCom.DesktopApp.RunPageCalcOnlyModel">
+    <Position X="7.25" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>AppModels\RunPageCalcOnlyModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.RunPageModel">
+    <Position X="10" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>AppModels\RunPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.SettingsPageModel">
+    <Position X="5.25" Y="9.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAACQAAAAAUAACAAgAAAAAAAACAsAAAAAAAAAA=</HashCode>
+      <FileName>AppModels\SettingsPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.TextEditorModel">
+    <Position X="5.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>AppModels\TextEditorModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.MainWindowViewModel">
+    <Position X="0.5" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAGAAAAAAAEAIgACAAAAgIAAAAAQAgAACAAAASAA=</HashCode>
+      <FileName>AppViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.RunPageCalcOnlyViewModel">
+    <Position X="3" Y="2.5" Width="2.25" />
+    <InheritanceLine Type="ToyCom.DesktopApp.ViewModelBase" FixedToPoint="true">
+      <Path>
+        <Point X="5.75" Y="2.055" />
+        <Point X="5.75" Y="2.26" />
+        <Point X="4.125" Y="2.26" />
+        <Point X="4.125" Y="2.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ACAgAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAQAA=</HashCode>
+      <FileName>AppViewModels\RunPageCalcOnlyViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.RunPageViewModel">
+    <Position X="5.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AKAgAgAAACAAAAAAAABCAAABAAEAQAAAAAgAAAIEQIA=</HashCode>
+      <FileName>AppViewModels\RunPageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.SettingsPageViewModel">
+    <Position X="7.25" Y="2.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ADAAAgAACQAAAAAUAACAAgAAAAAAAACAMAgAAAAAQAA=</HashCode>
+      <FileName>AppViewModels\SettingsPageViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.TextEditorViewModel">
+    <Position X="9.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AABAABAAAAEIAAAAAAAAAgAAAAAAAAAAAAgAAAQAAAg=</HashCode>
+      <FileName>AppViewModels\TextEditorViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ToyCom.DesktopApp.RunPageCalcOnlyView" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="10.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACCAAQAAAAAAAAA=</HashCode>
+      <FileName>AppViews\RunPageCalcOnlyView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToyCom.DesktopApp.RunPageView" BaseTypeListCollapsed="true">
+    <Position X="11.75" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQACCAAQAAAAAAAAA=</HashCode>
+      <FileName>AppViews\RunPageView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToyCom.DesktopApp.SettingsPageView" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="10.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppViews\SettingsPageView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToyCom.DesktopApp.TextEditorView" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="7.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAgAAABAAAIAAAAABAAEAAAEAAAAAAAgAA=</HashCode>
+      <FileName>AppViews\TextEditorView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToyCom.DesktopApp.DelegateCommand" BaseTypeListCollapsed="true">
+    <Position X="3.25" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAICAAQAAEAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>DelegateCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToyCom.DesktopApp.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="7.5" Width="2.5" />
+    <NestedTypes>
+      <Struct Name="ToyCom.DesktopApp.MainWindow.RECT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MainWindow.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="ToyCom.DesktopApp.MainWindow.MONITORINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MainWindow.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="ToyCom.DesktopApp.MainWindow.POINT" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MainWindow.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="ToyCom.DesktopApp.MainWindow.MINMAXINFO" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>MainWindow.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAABAACAAAAAAIgAAABAABEAAIAQQRAEAAAQ=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ToyCom.DesktopApp.ViewModelBase">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
