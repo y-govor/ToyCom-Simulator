@@ -86,7 +86,10 @@
                 <!-- Run (Automatically) -->
                 <Button Grid.Column="6" Width="24"
                     HorizontalAlignment="Left"
-                    ToolTip="{DynamicResource l_Toolbar_RunAuto}">
+                    ToolTip="{DynamicResource l_Toolbar_RunAuto}"
+                    Command="{Binding DataContext.LoadRunPageAutomaticCommand,
+                            RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                            Mode=OneWay}">
                     <Image Source="/Icons/run-green.png"/>
                 </Button>
                 <!-- Run (Calculations Only) -->

@@ -109,9 +109,14 @@ namespace ToyCom.DesktopApp
                 return;
             }
 
+            // Load Run Page
             if(mode == ProgramExecutionMode.CalculationsOnly)
             {
                 this.CurrentViewModel = new RunPageCalcOnlyViewModel(new RunPageCalcOnlyModel(this.Settings));
+            }
+            else
+            {
+                this.CurrentViewModel = new RunPageViewModel(new RunPageModel(this.Settings, mode));
             }
         }
     }

@@ -41,8 +41,14 @@
             </MenuItem>
             <MenuItem Header="{DynamicResource l_Menu_Tools}">
                 <MenuItem Header="{DynamicResource l_Menu_Tools_Run}">
-                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_Auto}"/>
-                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_StepOver}"/>
+                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_Auto}"
+                              Command="{Binding DataContext.LoadRunPageAutomaticCommand,
+                                      RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                                      Mode=OneWay}"/>
+                    <MenuItem Header="{DynamicResource l_Menu_Tools_Run_StepOver}"
+                              Command="{Binding DataContext.LoadRunPageStepOverCommand,
+                                      RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                                      Mode=OneWay}"/>
                     <MenuItem Header="{DynamicResource l_Menu_Tools_Run_CalcOnly}"
                               Command="{Binding DataContext.LoadRunPageCalcOnlyCommand,
                                       RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},

@@ -81,6 +81,8 @@ namespace ToyCom.DesktopApp
 
                 Thread bgThread = new Thread(tr);
                 bgThread.Start();
+                bgThread.Join();
+                run.OutputLog += "PROGRAM FINISHED EXECUTING";
             }
         }
 

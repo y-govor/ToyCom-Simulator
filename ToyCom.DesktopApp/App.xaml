@@ -13,6 +13,10 @@
                 <local:SettingsPageView/>
             </DataTemplate>
             <!-- Run Program Page ViewModel -->
+            <DataTemplate DataType="{x:Type local:RunPageViewModel}">
+                <local:RunPageView/>
+            </DataTemplate>
+            <!-- Run Program Page (Calculation Only mode) ViewModel -->
             <DataTemplate DataType="{x:Type local:RunPageCalcOnlyViewModel}">
                 <local:RunPageCalcOnlyView/>
             </DataTemplate>

@@ -25,7 +25,7 @@
     <v:String x:Key="l_Menu_Tools_Run_CalcOnly">Calculations Only</v:String>
     <v:String x:Key="l_Menu_Tools_Options">Options</v:String>
     <v:String x:Key="l_Menu_Help">Help</v:String>
-    <v:String x:Key="l_Menu_Help_Help">Help</v:String>
+    <v:String x:Key="l_Menu_Help_Help">Commands</v:String>
     <v:String x:Key="l_Menu_Help_About">About</v:String>
     <!-- Toolbar -->
     <v:String x:Key="l_Toolbar_Load">Load Program</v:String>
