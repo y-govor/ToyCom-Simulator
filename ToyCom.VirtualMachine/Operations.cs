@@ -103,5 +103,32 @@ namespace ToyCom.VirtualMachine
         {
             value = (ram[operand] == null) ? 0 : ram[operand].Value;
         }
+
+        // 09: Jump
+        // Change program counter to the specified address
+        public static void Jump(ref CPU cpu, int operand)
+        {
+            cpu.PC = operand;
+        }
+
+        // 10: JumpIfZero
+        // Change program counter to the specified address if ZF = 1
+        public static void JumpIfZero(ref CPU cpu, int operand)
+        {
+            if(cpu.ZF)
+            {
+                cpu.PC = operand;
+            }
+        }
+
+        // 11: JumpIfNegative
+        // Change program counter to the specified address if SF = 1
+        public static void JumpIfNegative(ref CPU cpu, int operand)
+        {
+            if(cpu.SF)
+            {
+                cpu.PC = operand;
+            }
+        }
     }
 }

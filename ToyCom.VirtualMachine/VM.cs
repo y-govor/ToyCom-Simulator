@@ -118,15 +118,21 @@ namespace ToyCom.VirtualMachine
             }
             else if(this.OpCode == 9) // Jump
             {
-                //
+                Operations.Jump(ref this.CPU, this.Addr);
+                // Finish method execution
+                return;
             }
             else if(this.OpCode == 10) // Jump If Zero
             {
-                //
+                Operations.JumpIfZero(ref this.CPU, this.Addr);
+                // Finish method execution
+                return;
             }
             else if(this.OpCode == 11) // Jump If Negative
             {
-                //
+                Operations.JumpIfNegative(ref this.CPU, this.Addr);
+                // Finish method execution
+                return;
             }
             else
             {
