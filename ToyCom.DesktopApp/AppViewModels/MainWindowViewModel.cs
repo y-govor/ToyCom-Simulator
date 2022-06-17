@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 using ToyCom.Utilities;
 
@@ -12,6 +13,10 @@ namespace ToyCom.DesktopApp
         public ICommand LoadRunPageAutomaticCommand { get; private set; }
         public ICommand LoadRunPageStepOverCommand { get; private set; }
         public ICommand LoadRunPageCalcOnlyCommand { get; private set; }
+
+        public ICommand ShowHelpCommand { get; private set; }
+
+        #region Properties
 
         // ViewModel that is currently bound to the ContentControl
         private ViewModelBase _currentViewModel;
@@ -64,6 +69,8 @@ namespace ToyCom.DesktopApp
             }
         }
 
+        #endregion
+
         public MainWindowViewModel(Settings settings)
         {
             this.Settings = settings;
@@ -84,6 +91,24 @@ namespace ToyCom.DesktopApp
 
             this.LoadRunPageCalcOnlyCommand = new DelegateCommand(o =>
                 this.LoadRunPage(ProgramExecutionMode.CalculationsOnly));
+
+            this.ShowHelpCommand = new DelegateCommand(o =>
+            {
+                MessageBox.Show(
+                    "0000 – Finish program execution" + Environment.NewLine +
+                    "01xx – Load number into Accumulator" + Environment.NewLine +
+                    "02xx – Store number in specified address" + Environment.NewLine +
+                    "03xx – Add specified number to Accumulator" + Environment.NewLine +
+                    "04xx – Subtract specified number from Accumulator" + Environment.NewLine +
+                    "05xx – Multiply Accumulator by specified number" + Environment.NewLine +
+                    "06xx – Divide Accumulator by specified number" + Environment.NewLine +
+                    "07xx – Input value into the specified address" + Environment.NewLine +
+                    "08xx – Output value stored in the specified address" + Environment.NewLine +
+                    "09xx – Jump to specified address" + Environment.NewLine +
+                    "10xx – Jump to specified address if ZF = 1" + Environment.NewLine +
+                    "11xx – Jump to specified address if SF = 1",
+                    "ToyCom Commands", MessageBoxButton.OK);
+            });
         }
 
         private void LoadTextEditor()

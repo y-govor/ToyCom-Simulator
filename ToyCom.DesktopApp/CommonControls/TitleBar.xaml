@@ -60,7 +60,10 @@
                                    Mode=OneWay}"/>
             </MenuItem>
             <MenuItem Header="{DynamicResource l_Menu_Help}">
-                <MenuItem Header="{DynamicResource l_Menu_Help_Help}"/>
+                <MenuItem Header="{DynamicResource l_Menu_Help_Help}"
+                          Command="{Binding DataContext.ShowHelpCommand,
+                                   RelativeSource={RelativeSource AncestorType={x:Type main:MainWindow}},
+                                   Mode=OneWay}"/>
                 <MenuItem Header="{DynamicResource l_Menu_Help_About}"/>
             </MenuItem>
         </Menu>
