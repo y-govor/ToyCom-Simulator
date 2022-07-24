@@ -44,7 +44,8 @@
                     <ComboBox Name="LanguageSelection" Grid.Column="1"
                               Width="120" Height="24" VerticalAlignment="Center"
                               ItemsSource="{Binding Languages}"
-                              SelectedIndex="{Binding SelectedLanguageIndex}"/>
+                              SelectedIndex="{Binding SelectedLanguageIndex}"
+                              SelectionChanged="LanguageSelection_SelectionChanged"/>
                 </Grid>
                 <!-- Theme selection -->
                 <Grid Grid.Row="1">

@@ -18,7 +18,7 @@ namespace ToyCom.Utilities
             _langs = new Dictionary<string, Language>()
             {
                 { "English", Language.English },
-                { "Ukrainian", Language.Ukrainian }
+                { "Українська", Language.Ukrainian }
             };
 
             Count = _langs.Count;

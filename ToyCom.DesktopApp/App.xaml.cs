@@ -33,6 +33,20 @@ namespace ToyCom.DesktopApp
                 File.WriteAllText("settings.cfg", tomlString);
             }
 
+            // Set the language
+            if(settings.Language == "Українська")
+            {
+                // Ukrainian
+                this.Resources.MergedDictionaries[0].Source =
+                    new Uri($"/Languages/lang.ua.xaml", UriKind.Relative);
+            }
+            else
+            {
+                // Default (English)
+                this.Resources.MergedDictionaries[0].Source =
+                    new Uri($"/Languages/lang.xaml", UriKind.Relative);
+            }
+
             Application.Current.MainWindow = new MainWindow() { DataContext = new MainWindowViewModel(settings) };
             Application.Current.MainWindow.Show();
         }

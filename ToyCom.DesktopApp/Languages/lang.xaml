@@ -3,7 +3,7 @@
                     xmlns:v="clr-namespace:System;assembly=mscorlib">
     <!-- Languages -->
     <v:String x:Key="l_Settings_General_Lang_en">English</v:String>
-    <v:String x:Key="l_Settings_General_Lang_uk">Ukrainian</v:String>
+    <v:String x:Key="l_Settings_General_Lang_uk">Українська</v:String>
     <!-- Window -->
     <v:String x:Key="l_Window_Title">ToyCom Simulator</v:String>
     <!-- Menu -->
